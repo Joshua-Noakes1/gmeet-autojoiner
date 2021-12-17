@@ -1,23 +1,26 @@
 {
-  "name": "googlemeet-autojoiner",
-  "version": "1.0.0",
+  "name": "autojoiner",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -i *.json app.js",
+    "start": "node app.js",
     "start-old": "node app.old.js"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.3",
-    "express": "^4.17.1",
-    "puppeteer": "^5.0.0",
-    "puppeteer-extra": "^3.1.12",
-    "puppeteer-extra-plugin-stealth": "^2.4.13",
-    "shortid": "^2.2.15"
+    "body-parser": "^1.19.1",
+    "cli-color": "^2.0.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "uuid": "^8.3.2"
   }
 }

@@ -3,8 +3,8 @@ Join Google meet meetings automatically while you sleep peacefully
 
 # Prerequisite:
 
-- Node.js  v8 or greater
-- Chrome Browser 75+ (wont work properly on firefox)
+- Node.js v14 or greater
+- Chrome Browser 95+ (wont work properly on firefox)
 
 # Usage Guide:
 
