@@ -11,7 +11,7 @@ const router = express.Router();
 
 // catch all
 router.get('/', function (req, res) {
-    return res.status(400).send("This endpoint only accepts POST requests");
+    return res.status(400).json({success: false, message:"This endpoint only accepts POST requests"});
 });
 
 // create session

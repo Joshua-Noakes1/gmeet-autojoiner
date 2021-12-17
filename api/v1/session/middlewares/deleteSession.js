@@ -2,11 +2,11 @@ const path = require('path'),
     {
         readJSON,
         writeJSON
-    } = require('../../../../lib/assets/readWrite');
+    } = require('../../../../lib/readWrite');
 
 async function deleteSession(sessionData) {
     // load sessions
-    var session = await readJSON(path.join(__dirname, '../', '../', '../', '../', 'data', 'sessions', 'sessions.json'), true);
+    var session = await readJSON(path.join(__dirname, '../', '../', '../', '../', 'data', 'sessions.json'), true);
     if (session.success == false) return {
         success: false
     };
@@ -27,7 +27,7 @@ async function deleteSession(sessionData) {
 
     // save sessions
     try {
-        await writeJSON(path.join(__dirname, '../', '../', '../', '../', 'data', 'sessions', 'sessions.json'), session, true);
+        await writeJSON(path.join(__dirname, '../', '../', '../', '../', 'data', 'sessions.json'), session, true);
         return {
             success: true
         };

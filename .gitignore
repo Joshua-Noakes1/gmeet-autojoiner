@@ -117,3 +117,4 @@ dist
 
 # Extra 
 *.old*
+data/*.json*
