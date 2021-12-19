@@ -19,23 +19,23 @@ router.post('/create', async function (req, res) {
     const session = req.body;
 
     // check if name and time are in req
-    if (!session.name || !session.time || !session.url) return res.status(400).json({success: false, message: "Missing name, name or URL"});
+    if (!session.name || !session.time || !session.id) return res.status(400).json({success: false, message: "Missing name, name or URL"});
 
     const sessionData = {
-        id: uuidv4(),
+        uuid: uuidv4(),
         name: session.name,
         time: Date.now(),
-        url: session.url
+        id: session.id
     }
 
     var sessionSaved = await saveSession(sessionData);
 
     if (sessionSaved.success) {
-        console.log(lcl.blue("[Session - Info]"), "Created session", lcl.yellow(sessionData.id));
+        console.log(lcl.blue("[Session - Info]"), "Created session", `(${lcl.yellow(sessionData.uuid)})`);
         return res.json({
             success: true,
             message: "Saved session",
-            id: sessionData.id
+            uuid: sessionData.uuid
         });
     } else {
         console.log(lcl.red("[Session - Error]"), "Failed to create session");
@@ -50,16 +50,16 @@ router.post('/create', async function (req, res) {
 router.post('/delete', async function (req, res) {
     const session = req.body;
 
-    if (!session.id) return res.status(400).json({success: false, message: "Missing id"});
+    if (!session.uuid) return res.status(400).json({success: false, message: "Missing id"});
 
-    var sessionData = await deleteSession(session.id);
+    var sessionData = await deleteSession(session.uuid);
 
     if (sessionData.success) {
-        console.log(lcl.blue("[Session - Info]"), "Deleted session", lcl.yellow(session.id));
+        console.log(lcl.blue("[Session - Info]"), "Deleted session", `(${lcl.yellow(session.uuid)})`);
         return res.json({
             success: true,
             message: "Deleted session",
-            id: session.id
+            id: session.uuid
         });
     } else {
         console.log(lcl.red("[Session - Error]"), "Failed to delete session");
