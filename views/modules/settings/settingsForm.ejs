@@ -1,0 +1,23 @@
+<div class="col">
+    <div class="card text-white bg-primary mb-3 text-center">
+        <div class="card-header">Settings</div>
+        <div class="card-body">
+            <div class="container">
+                <form id="emailPasswordForm" onSubmit="submitEP();return false;">
+                    <h4 class="card-title">Email:</h4>
+                    <input name="email" type="email" class="form-control" id="email"
+                        placeholder="Ex - example@example.com" required>
+                    <div style="margin: 10px 0 10px 0;"></div>
+                    <h4 class="card-title">Password:</h4>
+                    <input name="password" type="password" class="form-control" id="password" required>
+                    <div style="margin: 10px 0 10px 0;"></div>
+                </form>
+                <span>
+                    <button id="github-btn" class="btn btn-secondary contentBtn my-2 my-sm-0" type="submit"
+                        form="emailPasswordForm">Submit
+                        Account</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

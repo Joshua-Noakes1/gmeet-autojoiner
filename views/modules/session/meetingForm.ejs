@@ -1,0 +1,29 @@
+<div class="col">
+    <div class="card text-white bg-primary mb-3 text-center">
+        <div class="card-header">Create Meeting</div>
+        <div class="card-body">
+            <div class="container">
+                <form id="meetingForm" onSubmit="submitMeet();return false;">
+                    <!-- Name -->
+                    <h4 class="card-title">Meeting Name:</h4>
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Ex - English P5"
+                        required>
+                    <div style="margin: 10px 0 10px 0;"></div>
+                    <!-- Time -->
+                    <h4 class="card-title">Meeting Time:</h4>
+                    <input name="dateTime" type="datetime-local" class="form-control" id="dateTime" required>
+                    <div style="margin: 10px 0 10px 0;"></div>
+                    <!-- ID -->
+                    <h4 class="card-title">Meeting ID:</h4>
+                    <input name="ID" type="text" class="form-control" id="ID" placeholder="Ex - icz-zffc-sqo" required>
+                    <div style="margin: 10px 0 10px 0;"></div>
+                </form>
+                <span>
+                    <button id="github-btn" class="btn btn-secondary contentBtn my-2 my-sm-0" type="submit"
+                        form="meetingForm">Submit
+                        Meeting</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

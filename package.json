@@ -1,13 +1,12 @@
 {
-  "name": "autojoiner",
-  "version": "2.0.0",
+  "name": "gmeet-autojoiner",
+  "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon -i *.json app.js",
-    "start": "node app.js",
-    "start-old": "node app.old.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +23,6 @@
     "path": "^0.12.7",
     "puppeteer-extra": "^3.2.3",
     "puppeteer-extra-plugin-stealth": "^2.9.0",
-    "uuid": "^8.3.2",
-    "workerpool": "^6.1.5"
+    "uuid": "^8.3.2"
   }
 }

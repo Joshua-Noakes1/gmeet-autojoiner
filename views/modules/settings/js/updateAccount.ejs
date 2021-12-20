@@ -1,0 +1,35 @@
+<script defer>
+    function submitEP() {
+        // get the form elems
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+
+        // get text from email and password
+        const emailText = email.value;
+        const passwordText = password.value;
+
+        // build the request
+        try {
+            fetch('/api/v1/account/update', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: emailText,
+                        password: passwordText
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(`Updated Account with email ("${emailText}")`);
+                        window.location.replace('/');
+                    }
+                });
+        } catch (error) {
+            alert('Failed to save account!');
+            console.log(error);
+        }
+    }
+</script>

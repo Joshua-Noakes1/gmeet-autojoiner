@@ -1,0 +1,40 @@
+<script defer>
+    function submitMeet() {
+        // get the form elems
+        const name = document.getElementById('name');
+        const dateTime = document.getElementById('dateTime');
+        const ID = document.getElementById('ID');
+
+        // get text from email and password
+        const nameText = name.value;
+        const dateTimeValue = dateTime.value;
+        const IDText = ID.value;
+
+        console.log(new Date(dateTimeValue).valueOf());
+
+        // build the request
+        try {
+            fetch('/api/v1/session/create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: nameText,
+                        time: new Date(dateTimeValue).valueOf(),
+                        id: IDText
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(`Saved meeting with id ("${data.uuid}")`);
+                        window.location.replace('/');
+                    }
+                });
+        } catch (error) {
+            alert('Failed to save meeting!');
+            console.log(error);
+        }
+    }
+</script>

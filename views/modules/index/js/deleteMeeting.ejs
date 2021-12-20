@@ -1,0 +1,26 @@
+<script defer>
+    function delMeeting(uuid) {
+        // build the request
+        try {
+            fetch('/api/v1/session/delete', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        uuid: uuid
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(`Deleted meeting with id ("${uuid}")`);
+                        window.location.replace('/');
+                    }
+                });
+        } catch (error) {
+            alert('Failed to save meeting!');
+            console.log(error);
+        }
+    }
+</script>

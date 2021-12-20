@@ -24,7 +24,7 @@ router.post('/create', async function (req, res) {
     const sessionData = {
         uuid: uuidv4(),
         name: session.name,
-        time: Date.now(),
+        time: session.time,
         id: session.id
     }
 
@@ -59,7 +59,7 @@ router.post('/delete', async function (req, res) {
         return res.json({
             success: true,
             message: "Deleted session",
-            id: session.uuid
+            uuid: session.uuid
         });
     } else {
         console.log(lcl.red("[Session - Error]"), "Failed to delete session");

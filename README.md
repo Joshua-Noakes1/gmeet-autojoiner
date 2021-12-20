@@ -1,15 +1,16 @@
 # gmeet-autojoiner
+
 Join Google meet meetings automatically while you sleep peacefully
 
 # Prerequisite:
 
-- Node.js v14 or greater
+- Node.js v15 or greater
 - Chrome Browser 95+ (wont work properly on firefox)
 
 # Usage Guide:
 
 Clone the repo
-`https://github.com/Rex1911/gmeet-autojoiner.git`
+`https://github.com/joshua-noakes1/gmeet-autojoiner.git`
 
 Go inside the project directory and do
 `npm install`
@@ -18,34 +19,24 @@ Then use `npm start` to start the app
 
 Goto `localhost:3000` to access the frontend
 
-First and foremost, enter you Email Address and Password in the "Settings" section and click "Set"
+First and foremost, click settings then enter you Email Address and click "Save Account"
 
-Enter the meeting details in the "Gmeet Autojoiner" section and click "Submit"
+Enter the meeting details in the "Create Meeting" section and click "Save Meeting"
 
-Keep the nodejs process **RUNNING** and you will automatically join the meeting at the specified time.
-
-Use the "Delete meeting" section to Delete a meeting.
+Use the "Delete meeting" button to Delete a meeting.
 
 # Additional Info
 
-- **IMPORTANT**: The the webcam is enabled by default,  so if you plan to run this on your laptop, be sure to cover your webcam. One way to do this is to configure the laptop to not go into "sleep" mode  when the lid is closed. 
-
 - If you host this locally, make sure that you laptop/PC doesn't sleep, or else this is not going to work.
 
-- The email, password, and meeting details are held in a variable. This means that whenever you restart the server, these variables are reset. So make sure to enter everything again if you restart the server. 
-
-- By default, a chrome window is opened when joining a meeting. If you dont want the chrome window to open, go into app.js and change `HEADLESS=false` to `HEADLESS=true`
-
-- The process checks every few seconds to join a valid meeting. This is controlled by the `CHECKTIME` variable which is set to 10 seconds by default. Change that  variabel to change how often the procces checks for meetings to join.
-
 # Error resolving
- - Logs are enabled by default, so in any case there is an error check for logs
- - Retry count is set to 5, which can me changed as needed in lib/Gmeet.js::51:22
+
+- Logs are enabled by default, so in any case there is an error check for logs
+
 ## Known errors
- - Invalid email passs
-   - Provide email/pass in env file or through gui
- - Unable to open chrome, try with no sandbox mode
-   - to resolve this just add `--no-sandbox` to lib/Gmeet::27:74 as a string
+
+- Invalid email passs
+  - Provide email/pass in data/account.json file or through gui
 
 # Disclaimer
 

@@ -13,20 +13,14 @@
         <div style="margin: 10px 0 10px 0;"></div>
         <div class="container-fluid">
             <div class="row justify-content-evenly">
-                <% if (web.session.sessions.length > 0) { %>
-                <!-- Loop Cards-->
-                <%- include('./modules/index/cardsLoop.ejs'); %>
-                <% } else { %>
-                <!-- No Cards -->
-                <%- include('./modules/index/cardsNone.ejs'); %>
-                <% } %>
+                <!-- Meeting Form -->
+                <%- include('./modules/session/meetingForm.ejs'); %>
             </div>
         </div>
     </div>
 
-    <!-- Delete Meeting -->
-    <%- include('./modules/index/js/deleteMeeting.ejs'); %>
-    <!-- Socket IO -->
+    <!-- Create Meeting -->
+    <%- include('./modules/session/js/createMeeting.ejs'); %>
 </body>
 
 </html>

@@ -14,7 +14,7 @@ async function deleteSession(sessionData) {
     // loop over till we find the session id
     var sessionID;
     for (var i = 0; i < session.sessions.length; i++) {
-        if (session.sessions[i].id == sessionData) {
+        if (session.sessions[i].uuid == sessionData) {
             sessionID = i;
         }
     }

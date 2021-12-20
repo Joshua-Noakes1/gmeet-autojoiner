@@ -1,0 +1,18 @@
+<% web.session.sessions.forEach((eSession) => {%>
+<div id="<%= eSession.uuid %>" class="col-4 text-center">
+    <div class="card text-white bg-success mb-3">
+        <div class="card-header">Google Meet</div>
+        <div class="card-body">
+            <h4 class="card-title"><%= eSession.name %></h4>
+            <p class="card-text">Time: <%= eSession.time %></p>
+        </div>
+        <div style="margin: 10px 0 10px 0;"></div>
+        <span>
+            <a href="https://meet.google.com/<%= eSession.id %>" target="_blank">
+                <button id="github-btn" class="btn btn-primary contentBtn my-2 my-sm-0">Join Meeting</button></a>
+            <button id="github-btn" class="btn btn-danger contentBtn my-2 my-sm-0" onclick='delMeeting("<%= eSession.uuid %>")'>Delete Meeting</button>
+        </span>
+        <div style="margin: 10px 0 10px 0;"></div>
+    </div>
+</div>
+<% }); %>
