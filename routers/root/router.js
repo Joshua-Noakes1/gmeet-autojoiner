@@ -15,8 +15,12 @@ const web = {
 router.get('/', async function (req, res) {
     // load and loop over time
     var session = await readJSON(path.join(__dirname, '../', '../', 'data', 'sessions.json'), true);
-    for (var i = 0; i < session.sessions.length; i++) {
-        session.sessions[i].time = new Date(session.sessions[i].time);
+    if (session.success) {
+        for (var i = 0; i < session.sessions.length; i++) {
+            session.sessions[i].time = new Date(session.sessions[i].time);
+        }
+    } else {
+        session.sessions = [];
     }
 
     // render page
@@ -33,7 +37,7 @@ router.get('/', async function (req, res) {
                     href: "/settings"
                 }
             },
-            session: session
+            session
         }
     });
 });
