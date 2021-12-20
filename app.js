@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({
 
 // express routes
 app.use('/', require('./routers/root/router'));
+app.use('/static', express.static(__dirname + '/public'));
 app.use('/api', require('./api/router'));
 
 
